@@ -1,0 +1,58 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="row mt-3">
+    <div class="col-8 offset-2">
+        <h3>Edit your Listing</h3>
+
+        <form method="POST" action="/listings/<%= listing._id %>?_method=PUT"  novalidate class="needs-validation" enctype="multipart/form-data">                     
+                                                                                                                                    
+            <div class="mb-3">
+                <label for="title" class="form-label">Title</label>
+                <input id="title" name="listing[title]" value="<%= listing.title %>" type="text" class="form-control" required /> 
+            <div class="valid-feedback">it ok</div>
+            </div>
+
+            <div class="mb-3">
+                <label for="description" class="form-label">Description</label>
+                <!-- Textarea values go between the tags, not in a value attribute -->
+                <textarea id="description" name="listing[description]" class="form-control" required><%= listing.description  %></textarea>
+            <div class="invalid-feedback">description shouls be valid</div>
+            </div>
+
+            <div class="mb-3">
+                Original Listing Image <br />
+                <img src="<%= origanalImageUrl %>" />
+            </div>
+
+            <div class="mb-3">
+                <label for="image" class="form-label">Uploads new image</label>
+                <!-- Note: If your image is an object in MongoDB, you may need to use listing.image.url here instead -->
+                <input id="image" name="listing[image]" type="file" class="form-control" /> 
+           
+            </div>
+
+            <div class="row">
+                <div class="mb-3 col-md-4">
+                    <label for="price" class="form-label">Price</label>
+                    <input id="price" name="listing[price]" value="<%= listing.price %>" type="number" class="form-control" required min="0" /> 
+                <div class="invalid-feedback">price shouls be valid</div>
+                </div>
+
+                <div class="mb-3 col-md-8">
+                    <label for="country" class="form-label">Country</label>
+                    <input id="country" name="listing[country]" value="<%= listing.country %>" type="text" class="form-control" required /> 
+                <div class="invalid-feedback">country shouls be valid</div>
+                </div>
+            </div>
+
+            <div class="mb-3">
+                <label for="location" class="form-label">Location</label>
+                <input id="location" name="listing[location]" value="<%= listing.location %>" type="text" class="form-control" required /> 
+            <div class="invalid-feedback">location shouls be valid</div>
+            </div>
+
+            <button type="submit" class="btn btn-dark mt-3">Edit</button>
+        </form>
+    </div>
+</div>
+<!-- <script src="\js\script.js"> </script> -->

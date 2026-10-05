@@ -1,0 +1,47 @@
+<% layout("layouts/boilerplate") %>
+
+<div class="container my-5">
+  <!-- Hero Section -->
+  <div class="p-5 text-center bg-dark text-white rounded-4 shadow-lg mb-5" 
+       style="background: linear-gradient(rgba(0,0,0,0.6), rgba(0,0,0,0.6)), url('https://images.unsplash.com/photo-1571896349842-33c89424de2d?q=80&w=1600&auto=format&fit=crop') center/cover no-repeat; min-height: 400px;">
+    
+    <div class="col-lg-8 mx-auto py-4">
+      <h1 class="display-4 fw-bold mb-3">Welcome to Wanderlust</h1>
+      <p class="lead mb-4">Discover luxury villas, cozy cabins, and unique stays around the globe.</p>
+      
+      <div class="d-grid gap-2 d-sm-flex justify-content-sm-center">
+        <a href="/listings" class="btn btn-danger btn-lg px-4 gap-3 rounded-pill">Explore All Listings</a>
+        <% if (!currUser) { %>
+          <a href="/signup" class="btn btn-outline-light btn-lg px-4 rounded-pill">Join Us</a>
+        <% } else { %>
+          <a href="/listings/new" class="btn btn-outline-light btn-lg px-4 rounded-pill">Host Your Home</a>
+        <% } %>
+      </div>
+    </div>
+  </div>
+
+  <!-- Featured Highlights -->
+  <div class="row g-4 text-center">
+    <div class="col-md-4">
+      <div class="p-4 border rounded-3 bg-light h-100 shadow-sm">
+        <i class="fa-solid fa-globe fa-2x text-danger mb-3"></i>
+        <h5>Global Stays</h5>
+        <p class="text-muted">Find destinations across hundreds of countries with verified reviews.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-4 border rounded-3 bg-light h-100 shadow-sm">
+        <i class="fa-solid fa-shield-halved fa-2x text-danger mb-3"></i>
+        <h5>Secure Booking</h5>
+        <p class="text-muted">Safe and reliable booking flow for both guests and hosts.</p>
+      </div>
+    </div>
+    <div class="col-md-4">
+      <div class="p-4 border rounded-3 bg-light h-100 shadow-sm">
+        <i class="fa-solid fa-house-user fa-2x text-danger mb-3"></i>
+        <h5>Easy Hosting</h5>
+        <p class="text-muted">List your property with custom pricing, photos, and dynamic maps.</p>
+      </div>
+    </div>
+  </div>
+</div>

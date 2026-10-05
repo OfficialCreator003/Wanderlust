@@ -1,0 +1,17 @@
+const mongoose = require("mongoose");
+const Schema = mongoose.Schema;
+
+// Access .default for CJS compatibility with newer passport-local-mongoose versions
+const passportLocalMongoose = require("passport-local-mongoose").default || require("passport-local-mongoose");
+
+const userSchema = new Schema({
+    email: {
+        type: String,
+        required: true,
+        unique: true
+    }
+});
+
+userSchema.plugin(passportLocalMongoose);
+
+module.exports = mongoose.model("User", userSchema);
