@@ -1,13 +1,18 @@
+
 {
+"engines": {
+    "node": "24.19.0"
+  },
+
   "name": "major-project",
   "version": "1.0.0",
-  "description": "",
+  "description": "Devloped By Hariom for end-to-end vacation rental platform featuring full CRUD operations for listings and reviews.",
   "main": "index.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
-  "author": "",
+  "author": "Hariom Kumar",
   "license": "ISC",
   "type": "commonjs",
   "dependencies": {
